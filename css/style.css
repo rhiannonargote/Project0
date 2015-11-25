@@ -1,0 +1,100 @@
+
+body {
+
+background: url("http://hdwallpapersfit.com/wp-content/uploads/2015/04/game-background-hd.jpg");
+background-size: cover;
+background-position: center;
+font-family: helvetica;
+
+}
+
+h1 {
+
+color: red;
+
+}
+
+#container {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+}
+
+#board {
+	width: 300px;
+	margin: 0px auto;
+}
+
+#board table {
+	border: solid;
+	width: 100%;
+}
+
+#board td {
+	width: 100px;
+	height: 100px;
+}
+
+.hidePlayer {
+	display: none;
+}
+
+.score {
+	color: red;
+}
+
+#newgame {
+  color: #900;
+  font-weight: bold;
+  font-size: 150%;
+  text-transform: uppercase;
+}
+
+.row {
+
+	width: 100px;
+	height: 100px;
+	background-color: rgba(60, 132, 198, 0.8);
+	font-size: 56px;
+	color: white;
+	text-align: center;
+
+}	
+
+.winnerOne {
+
+	visibility: hidden;
+
+}	
+
+.winnerTwo {
+
+	visibility: hidden;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
