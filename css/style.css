@@ -1,11 +1,12 @@
 
 body {
 
-background: url("http://hdwallpapersfit.com/wp-content/uploads/2015/04/game-background-hd.jpg");
-background-size: cover;
-background-position: center;
-font-family: helvetica;
-
+	background: url("http://hdwallpapersfit.com/wp-content/uploads/2015/04/game-background-hd.jpg");
+	background-size: cover;
+	background-position: center;
+	font-family: helvetica;
+	min-height: 100vh;
+	overflow: hidden;
 }
 
 h1 {
@@ -23,7 +24,7 @@ color: red;
 
 #board {
 	width: 300px;
-	margin: 0px auto;
+	margin: 50px auto;
 }
 
 #board table {
