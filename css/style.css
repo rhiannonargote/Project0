@@ -6,7 +6,7 @@ body {
 	background-position: center;
 	font-family: helvetica;
 	min-height: 100vh;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 h1 {
@@ -19,12 +19,13 @@ color: red;
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
-	color: white;
+	color: red;
 }
 
 #board {
 	width: 300px;
 	margin: 50px auto;
+	position: relative;
 }
 
 #board table {
@@ -50,32 +51,59 @@ color: red;
   font-weight: bold;
   font-size: 150%;
   text-transform: uppercase;
+  height: 10px;
+}
+
+.prompt {
+	position: absolute;
+	color: white;
+	font-size: 24px;
+	left: 250px;
+	top: 210px;
 }
 
 .row {
 
 	width: 100px;
 	height: 100px;
-	background-color: rgba(60, 132, 198, 0.8);
+	background-color: rgba(60, 132, 198, 0.6);
 	font-size: 56px;
 	color: white;
 	text-align: center;
 
 }	
 
-.winnerOne {
+.winnerO {
 
 	visibility: hidden;
 
 }	
 
-.winnerTwo {
+.winnerX {
 
 	visibility: hidden;
 
 }
 
+.gameOver {
 
+	visibility: hidden;
+}
+
+
+.playerTurn {
+
+	visibility: visible;
+}
+
+.score {
+
+	color: white;
+	position: absolute;
+	font-size: 24px;
+    top: 63px;
+    right: -250px;
+}
 
 
 
