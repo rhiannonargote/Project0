@@ -6,18 +6,15 @@ I had designed websites before that I have asked developers to build, and create
 and changed the front end using templates but this time I had to build that development brief myself from scratch. 
 
 On Monday afternoon I worked with Sylvain and he helped me see that I need to first layout the design of my board 
-so that any further information correlated to the code I wrote. It clicked that obviously a wireframe is the best place to start, 
-but again, when you have a blank CSS, JS and HTML sheet - it is not incredibly obvious where to begin. 
+so that any further information correlated to the code I wrote. It clicked that obviously a wireframe is the best place to start, but again, when you have a blank CSS, JS and HTML sheet - it is not incredibly obvious where to begin. 
 
 We used a HTML 'table' layout to create the board and gave the entire table (the board) an ID so we could style it later. 
 We also divided the horizontal rows into separate <div> tags to allow individual styling of the board edges.
 
-I continued to work with Sylvain on Tuesday. I understood the logic behind what we had to do, but given 
-I had only a few days experience with JQuery I found it hard to work out the syntax of code we needed to solve this problem using this language. 
+I continued to work with Sylvain on Tuesday. I understood the logic behind what we had to do, but given I had only a few days experience with JQuery I found it hard to work out the syntax of code we needed to solve this problem using this language. 
 
 Once we worked out the way to decide a player's move and then also the logic behind how to 'win' a game it started to become 
-clear how we needed to arrange the data and which functions we needed to create. The challenge was writing this is Jquery and not just Javascript.
-However the good thing about JQuery is that once you understand it, things become a lot easier.
+clear how we needed to arrange the data and which functions we needed to create. The challenge was writing this is Jquery and not just Javascript. However the good thing about JQuery is that once you understand it, things become a lot easier.
 
 Sylvain and I got our game working for 2 players at which point I wanted to experiment with different features on my own. 
 Because I was now more familiar with JQuery by now, after writing the player move functions 
@@ -30,8 +27,7 @@ which player move it was (0 or 1).
 
 Using Jquery I created a New Game button work that cleared the board when pressed 
 
-I hard coded the different winning variants to change the colour of the box background if a player got three in a row. I did it this way 
-because our function only determined a win ( ie true or false), but was unable to determine if X or O won. I was happy with that as I didn't want to have to write this code twice for X and O winning scenarios. It may limit future options, but I was ok with that, it's a nine board Tic Tac Toe game.
+I hard coded the different winning variants to change the colour of the box background if a player got three in a row. I did it this way because our function only determined a win ( ie true or false), but was unable to determine if X or O won. I was happy with that as I didn't want to have to write this code twice for X and O winning scenarios. It may limit future options, but I was ok with that, it's a nine board Tic Tac Toe game.
 
 I added a JQuery function that displayed which player won, if they got three in a row. 
 
