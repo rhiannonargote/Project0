@@ -48,8 +48,7 @@ To get the scoreboard text sitting to the right of the board, I listed the board
 
 Again there are probably much better ways to do this, but I wanted to experiment with CSS and get familiar with using it in this way.
 
-Finally I was happy with what I had created from scratch but now I understood really well how the program was running, I wanted to mkae an AI version. Instead of writing out the long code that would create the function for the computer AI, I looked around on Google and found a JS Fiddle example where 
-a person had approached the problem and arranged their variables and data in a very similar way to mine. So I copied the logic for a 9 board game which basically told the computer to choose a square if the other two squares were occupied by the other player. I did this rather than random assignment because otherwise the AI would have had no strategic intelligence and the player would almost always win. 
+Finally I was happy with what I had created from scratch but now I understood really well how the program was running, I wanted to make an AI version. Instead of writing out the long code that would create the function for the computer AI, I looked around on Google and found a JS Fiddle example where a person had approached the problem and arranged their variables and data in a very similar way to mine. So I copied the logic for a 9 board game which basically told the computer to choose a square if the other two squares were occupied by the other player. I did this rather than random assignment because otherwise the AI would have had no strategic intelligence and the player would almost always win. 
 
 It is still possible to beat the computer, in my game, which I think is a good thing since playing a game you can't win isn't really fun for the user. I didn't try to create different difficulty levels, but I would like to perhaps if I revisit this in the future.
 
