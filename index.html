@@ -13,18 +13,13 @@
 
 <h1>Tic Tac Toedom</h1>	
 
-<input id="newgame" type="button" value="New Game"/>
+<input id="newGame" type="button" value="New Game"/>
 
-<div class="prompt">
-
-				<!-- <p class="playerTurn hidePlayer">Player O Turn</p> -->
-				<p class="playerTurn">Player X Turn</p>
-				<p class="gameOver">Game Over</p>
-				<p class="winnerO">Player O Wins</p>
-				<p class="winnerX">Player X Wins</p>
-		</div>	
 
 	<div id="board">
+
+	<p class="playerTurn">Player X Turn</p>	
+	<!-- <p class="playerTurn hidePlayer">Player O Turn</p> -->
 
 	<table>
 		<tr class="row">
@@ -48,6 +43,14 @@
 
 	</table>	
 
+	<div class="prompt">
+
+				<p class="gameOver">Game Over</p>
+				<p class="winnerO">Player O Wins</p>
+				<p class="winnerX">Player X Wins</p>
+	</div>	
+	
+
 	<div class="score">
 
 		<p>Player X Score</p>
@@ -55,7 +58,13 @@
 		<p>Player O Score</p>
 		<p class="scoreO">0</p>
 
+		<div>
+			<input id="clearScore" type="button" value="Reset Score"/>
+		</div>
+
 	</div>
+
+
 
 </div>	
 

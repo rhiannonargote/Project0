@@ -2,20 +2,24 @@ var turn = 0;
 
 $('.square').click(function() {    	
     if (turn === 0 && $(this).text() == "") {
+        $(".playerTurn").addClass("playerOpacity");
+
+        //$('.playerTurn').css("visibility", "visible")
         $(this).text("x");
         turn = 1;
-        rules();
+        //$('.playerTurn').css("visibility", "hidden")
+        // rules();
         compMove();
-    } else if(turn === 1 && $(this).text() == "") {
+        //$('.playerTurn').css("visibility", "hidden");
+    //} else if(turn === 1 && $(this).text() == "") {
+
         //$(this).text("o");
         //turn = 0; 
     }
 
-    $('.playerTurn').css("visibility", "visible");
-	//$('.playerTurn').toggleClass('hidePlayer');
 
     rules();
-
+    // $('.playerTurn').toggleClass('hidePlayer');
 });
 
 
@@ -76,7 +80,9 @@ $('.square').click(function() {
 };
 
 var compMove = function () {
-    debugger;
+    window.setTimeout(function () {
+        $(".playerTurn").removeClass("playerOpacity");
+    }, 100);
 
     if ($a1Text == "" && (($a3Text == "x" && $a2Text == "x") || ($c3Text == "x" && $b2Text == "x") || ($c1Text == "x" && $b1Text == "x"))) {
         $('.a1').text("o");
@@ -177,16 +183,13 @@ var changeWinColor = function ( array ) {
 }
 
 var winner = function() {
-	var currentPlayer;
     if (turn === 1) {
-    	currentPlayer = "x"
         $('.winnerX').css("visibility", "visible");
         $('.winnerO').css("visibility", "hidden");
         scoreX();
 
 
     } else if (turn === 0) {
-    	currentPlayer = "o"
         $('.winnerO').css("visibility", "visible");
         $('.winnerX').css("visibility", "hidden");
         scoreO();
@@ -194,10 +197,6 @@ var winner = function() {
     }
 };
 
-
-// var moveDisplay = function () {
-//     if (turn = 0
-// }
 
 var scoreX = function () {
     $('.scoreX').text( parseInt( $('.scoreX').text() ) + 1 );
@@ -208,7 +207,7 @@ var scoreO = function () {
 }
 
 
- var clearInputs = $("#newgame").click( function() {
+ var clearInputs = $("#newGame").click( function() {
     turn = 0;
  	$('.square').text("");
     $('.square').css("background-color", "rgba(60, 132, 198, 0.8");
@@ -220,14 +219,17 @@ var scoreO = function () {
 
  
 var gameOver = function() {
-        $('.playerTurn').css("visibility", "hidden");
+        // $('.playerTurn').css("visibility", "hidden");
         $('.playerTurn').css("visibility", "hidden");
         $('.gameOver').css("visibility", "visible");
 };
 
 
 
-
+var clearScore = $("#clearScore").click (function () {
+        $('.scoreX').text("0");
+        $('.scoreO').text("0");     
+})
 
 
 

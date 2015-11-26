@@ -1,7 +1,7 @@
 
 body {
 
-	background: url("http://hdwallpapersfit.com/wp-content/uploads/2015/04/game-background-hd.jpg");
+	background: url(../image/tictactoe.jpg);
 	background-size: cover;
 	background-position: center;
 	font-family: helvetica;
@@ -15,12 +15,21 @@ color: red;
 
 }
 
+h1:hover {
+ color: blue;
+
+}
+
 #container {
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
 	color: red;
 }
+
+#board:hover {
+	color: blue;
+} 
 
 #board {
 	width: 300px;
@@ -46,7 +55,15 @@ color: red;
 	color: red;
 }
 
-#newgame {
+#newGame {
+  color: #900;
+  font-weight: bold;
+  font-size: 150%;
+  text-transform: uppercase;
+  height: 10px;
+}
+
+#clearScore {
   color: #900;
   font-weight: bold;
   font-size: 150%;
@@ -55,11 +72,12 @@ color: red;
 }
 
 .prompt {
-	position: absolute;
-	color: white;
-	font-size: 24px;
-	left: 250px;
-	top: 210px;
+	color: red;
+	font-size: 26px;
+	top: 20px;
+	text-align: center;
+	font-family: helvetica;
+
 }
 
 .row {
@@ -90,21 +108,36 @@ color: red;
 	visibility: hidden;
 }
 
+.playerOpacity {
+	opacity: 0;
+}
+
 
 .playerTurn {
+	transition: opacity 0.2s;
 
-	visibility: visible;
+	/*visibility: hidden;*/
 }
 
 .score {
 
 	color: white;
+	border: solid;
+	background-color: black;
 	position: absolute;
+	padding: 10px;
 	font-size: 24px;
-    top: 63px;
-    right: -250px;
+    top: 120px;
+    right: -350px;
+    border-radius: 10px 10px 10px 10px;
+    text-shadow: 0 1px 0 #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
+.score:hover {
+	color: red;	
+}
 
 
 
