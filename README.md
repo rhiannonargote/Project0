@@ -48,5 +48,5 @@ It is still possible to beat the computer, in my game, which I think is a good t
 
 Overall it is far from perfect, but I'm really happy with what I have achieved given this is only my third week at General Assembly, and I had no experience with JQuery before last Friday, or CSS and Javascript prior to 3 weeks ago.
 
-Special thanks to Joel Turnball and Jack Jeffress at General Assembly who have been awesome teachers and really helped me to debug andget my code working when I had issues. 
+Special thanks to Joel Turnball and Jack Jeffress at General Assembly who have been awesome teachers and really helped me to debug and get my code working when I had issues. 
 
