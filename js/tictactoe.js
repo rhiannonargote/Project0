@@ -11,9 +11,11 @@ $('.square').click(function() {
         //turn = 0; 
     }
 
-	$('.playerTurn').toggleClass('hidePlayer');
+    $('.playerTurn').css("visibility", "visible");
+	//$('.playerTurn').toggleClass('hidePlayer');
 
     rules();
+
 });
 
 
@@ -179,16 +181,23 @@ var winner = function() {
     if (turn === 1) {
     	currentPlayer = "x"
         $('.winnerX').css("visibility", "visible");
+        $('.winnerO').css("visibility", "hidden");
         scoreX();
 
 
     } else if (turn === 0) {
     	currentPlayer = "o"
         $('.winnerO').css("visibility", "visible");
+        $('.winnerX').css("visibility", "hidden");
         scoreO();
 
     }
 };
+
+
+// var moveDisplay = function () {
+//     if (turn = 0
+// }
 
 var scoreX = function () {
     $('.scoreX').text( parseInt( $('.scoreX').text() ) + 1 );
@@ -200,9 +209,10 @@ var scoreO = function () {
 
 
  var clearInputs = $("#newgame").click( function() {
+    turn = 0;
  	$('.square').text("");
     $('.square').css("background-color", "rgba(60, 132, 198, 0.8");
-    $(".gameOver").css("visibility", "hidden");
+    $('.gameOver').css("visibility", "hidden");
     $('.playerTurn').css("visibility", "visible");
     $('.winnerX').css("visibility", "hidden");
     $('.winnerO').css("visibility", "hidden");
@@ -210,6 +220,7 @@ var scoreO = function () {
 
  
 var gameOver = function() {
+        $('.playerTurn').css("visibility", "hidden");
         $('.playerTurn').css("visibility", "hidden");
         $('.gameOver').css("visibility", "visible");
 };
