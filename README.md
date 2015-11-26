@@ -25,24 +25,26 @@ which player move it was (0 or 1).
 
 Using Jquery I created a New Game button work that cleared the board when pressed 
 
-I hard coded the different winning variants to change the colour of the box background if a player got three in a row. I did it this way because our function only determined a win ( ie true or false), but was unable to determine if X or O won. I was happy with that as I didn't want to have to write this code twice for X and O winning scenarios. It may limit future options, but I was ok with that, it's a nine board Tic Tac Toe game.
+I hard coded the different winning variants to change the colour of the box background if a player got three in a row. I did it this way because our function only determined a Win ( ie true or false), but was unable to determine if X or O won from this function, so I created another individual function that determined whether the winner was O or X once the Rules function had been applied to the Move. I was happy with that as I didn't want to have to write this code twice for X and O winning scenarios. It may limit future options, but I was ok with that, it's a nine board Tic Tac Toe game.
 
-I added a JQuery function that displayed which player won, if they got three in a row. 
+I added a JQuery function that displayed which player won ie - "Player X Wins", if they got three in a row - this easily was possible because we had separated out the 'Winner' function from the Rules function.
 
-When a player won I also displayed the text Game Over. 
+When a player won I also displayed the text "Game Over". Both these were just paragraph text, with individual classes assigned to them.
 
-I added a scoreboard for each player that increased a count for each player depending on who won.
+I added a Scoreboard for each player (again just paragraphs tags with their own classes, that increased a count for each player depending on who won).
 
 All of these events were done using the hidden / visible CSS & JQuery commands. It became a bit confusing after a while what was on or off (if I went back to the code), but again, given this was my fifth day of JQuery, I let myself off.
 
-I started to play around with the CSS - something I also had little experience with, and managed to add and center a background, 
+I started to play around with the CSS - something I also had little experience with, and managed to add and centre a background, 
 with respect to web client responsiveness and also wanted to centre the gameboard, which I did using margin auto for the container it was in.
 
-To get the scoreboard text sitting to the right of the board, I listed the board container <div> itself as position relative and then positioned the score board as position absolute to the right and the Player Move / Game Over text to the left of the board, also as a position absolute.
+To get the Scoreboard paragraph text sitting to the right of the board, I listed the board container <div> itself as position relative and then positioned the Scoreboard (using its own class) as position absolute to the right and the Player Move / Game Over text to the left of the board, also as a position absolute. I gave the actual scores their own class so I could manipulate them later with JQuery to on and off.
 
 Again there are probably much better ways to do this, but I wanted to experiment with CSS and get familiar with using it in this way.
 
 Finally I was happy with what I had created from scratch but now I understood really well how the program was running, I wanted to make an AI version. Instead of writing out the long code that would create the function for the computer AI, I looked around on Google and found a JS Fiddle example where a person had approached the problem and arranged their variables and data in a very similar way to mine. So I copied the logic for a 9 board game which basically told the computer to choose a square if the other two squares were occupied by the other player. I did this rather than random assignment because otherwise the AI would have had no strategic intelligence and the player would almost always win. 
+
+I slotted it in to where the second player 
 
 It is still possible to beat the computer, in my game, which I think is a good thing since playing a game you can't win isn't really fun for the user. I didn't try to create different difficulty levels, but I would like to perhaps if I revisit this in the future.
 
