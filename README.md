@@ -8,8 +8,7 @@ and changed the front end using templates but this time I had to build that deve
 On Monday afternoon I worked with Sylvain and he helped me see that I need to first layout the design of my board 
 so that any further information correlated to the code I wrote. It clicked that obviously a wireframe is the best place to start, but again, when you have a blank CSS, JS and HTML sheet - it is not incredibly obvious where to begin. 
 
-We used a HTML 'table' layout to create the board and gave the entire table (the board) an ID so we could style it later. 
-We also divided the horizontal rows into separate <div> tags to allow individual styling of the board edges.
+We used a HTML 'table' layout to create the board and gave the entire table (the board) an ID so we could style it later. We also divided the horizontal rows into separate <div> tags to allow individual styling of the board edges.
 
 I continued to work with Sylvain on Tuesday. I understood the logic behind what we had to do, but given I had only a few days experience with JQuery I found it hard to work out the syntax of code we needed to solve this problem using this language. 
 
