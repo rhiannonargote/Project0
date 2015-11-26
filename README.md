@@ -4,7 +4,7 @@ Tic Tac Toe Game
 On Monday when I got the Tic Tac Toe brief, I had no idea where to start. I had designed websites before that I have asked developers to build, and created many blogs, 
 and changed the front end using templates but this time I had to build that development brief myself from scratch. 
 
-On Monday afternoon I worked with Sylvain and he helped me see that I need to first layout the design of my board 
+On Monday afternoon I worked with Sylvain from my class and he helped me see that I need to first layout the design of my board 
 so that any further information correlated to the code I wrote. It clicked that obviously a wireframe is the best place to start, but again, when you have a blank CSS, JS and HTML sheet - it is not incredibly obvious where to begin. 
 
 We used a HTML 'table' layout to create the board and gave the entire table (the board) an ID so we could style it later. We also divided the horizontal rows into separate div tags to allow individual styling of the board edges.
