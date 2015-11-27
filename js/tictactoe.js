@@ -1,29 +1,22 @@
-var turn = 0;
+var turn = 0; // X always starts - turn 0 is X
 
 $('.square').click(function() {    	
     if (turn === 0 && $(this).text() == "") {
-        $(".playerTurn").addClass("playerOpacity");
+        $(".playerTurn").addClass("playerOpacity"); //Slightly changes color when it's X turn
+        //Part of function to allow X move
+        $(this).text("x"); //Passes X in to the board
+        if (rules() === false) { // checks to see if there was a win
+            turn = 1; 
+            compMove(); // runs computer move
+            rules(); // checks to see if there was a win
+            turn = 0;  // returns to X turn
+        }
 
-        //$('.playerTurn').css("visibility", "visible")
-        $(this).text("x");
-        turn = 1;
-        //$('.playerTurn').css("visibility", "hidden")
-        // rules();
-        compMove();
-        //$('.playerTurn').css("visibility", "hidden");
-    //} else if(turn === 1 && $(this).text() == "") {
-
-        //$(this).text("o");
-        //turn = 0; 
-    }
-
-
-    rules();
-    // $('.playerTurn').toggleClass('hidePlayer');
+     }
 });
 
 
-    var $a1Text = $('.a1').text();
+    var $a1Text = $('.a1').text(); // turns the boards squares in to variables, based on their class
     var $a2Text = $('.a2').text();
     var $a3Text = $('.a3').text();
     var $b1Text = $('.b1').text();
@@ -33,7 +26,10 @@ $('.square').click(function() {
     var $c2Text = $('.c2').text();
     var $c3Text = $('.c3').text();
 
- var rules = function() {
+ var rules = function() { // determines if there has been a win for either player, and also runs the change color code
+    
+    tieGame();
+
     var result = false; 
 
     $a1Text = $('.a1').text();
@@ -73,88 +69,80 @@ $('.square').click(function() {
     };
 
     if ( result ) {
-        winner();
-        gameOver();
+        winner(); // if there is a win, determines whether it was X or 0 - displays this on screen
+        gameOver(); // runs the Game Over prompt and hides the Player turn 
 
     };
+
+    return result;
+
+
 };
 
-var compMove = function () {
+var compMove = function () { // this is the computer AI - it basically tells it to put a 0 in place to block a win
     window.setTimeout(function () {
-        $(".playerTurn").removeClass("playerOpacity");
+        $('.playerTurn').removeClass("playerOpacity"); // this is a function that slightly changes the opacity of the Player X move prompt, so X is reminded it is their turn
     }, 100);
 
-    if ($a1Text == "" && (($a3Text == "x" && $a2Text == "x") || ($c3Text == "x" && $b2Text == "x") || ($c1Text == "x" && $b1Text == "x"))) {
+    if ($a1Text == "" && (($a3Text == "x" && $a2Text == "x") || ($c3Text == "x" && $b2Text == "x") || ($c1Text == "x" && 
+        $b1Text == "x"))) {
         $('.a1').text("o");
-        turn = 0;
     } else {
       if ($a2Text == "" && (($a1Text == "x" && $a3Text == "x") || ($c2Text == "x" && $b2Text == "x"))) {
         $('.a2').text("o");
-        turn = 0;
         }
         else{
-        if ($a3Text == "" && (($a1Text == "x" && $a2Text == "x") || ($c1Text == "x" && $b2Text == "x") || ($c3Text == "x" && $b3Text == "x"))) {
+        if ($a3Text == "" && (($a1Text == "x" && $a2Text == "x") || ($c1Text == "x" && $b2Text == "x") || ($c3Text == "x" && 
+            $b3Text == "x"))) {
             $('.a3').text("o");
-            turn = 0;
         }
             else{
             if ($c3Text == "" && (($c1Text == "x" && $c2Text == "x") || ($a1Text == "x" && $b2Text == "x") || ($a3Text == "x" && $b3Text == "x"))) {
                 $('.c3').text("o");
-                turn = 0;
         }
                 else{
                 if ($c1Text == "" && (($c3Text == "x" && $c2Text == "x") || ($a3Text == "x" && $b2Text == "x") || ($a1Text == "x" && $b1Text == "x"))) {
                     $('.c1').text("o");
-                    turn = 0;
         }
                     else{
                     if ($c2Text == "" && (($c3Text == "x" && $c1Text == "x") || ($a2Text == "x" && $b2Text == "x"))) {
                         $('.c2').text("o");
-                        turn = 0;
         }
                         else{
                         if ($b1Text == "" && (($b3Text == "x" && $b2Text == "x") || ($a1Text == "x" && $c1Text == "x"))) {
                             $('.b1').text("o");
-                            turn = 0;
         }
                             else{
                             if ($b3Text == "" && (($a3Text == "x" && $c3Text == "x") || ($b2Text == "x" && $b1Text == "x"))) {
                                 $('.b3').text("o");
-                                turn = 0;
         }
                                 else{
                                 if ($b2Text == "" && (($a3Text == "x" && $c1Text == "x") || ($c3Text == "x" && a1 == "x") || ($b3Text == "x" && $b1Text == "x") || ($c2Text == "x" && $a2Text == "x"))) {
                                     $('.b2').text("o");
-                                    turn = 0;
         }
                                    else{ // IF NO OPP TO BLOCK A WIN, THEN PLAY IN ONE OF THESE SQUARES
                                     if ($b2Text == "") {
                                         $('.b2').text("o");
-                                        turn = 0;
                                        
                                     }
                                         else{
                                         if ($a1Text == "") {
                                             $('.a1').text("o");
-                                            turn = 0;
                                             
                                     }
                                             else{
                                             if ($c3Text == "") {
                                             $('.c3').text("o");
-                                            turn = 0;
                                           
                                     } 
                                                 else {
                                                 if ($c2Text == "") {
                                             $('.c2').text("o");
-                                            turn = 0;
                                           
                                     }
                                                     else{
                                                     if ($b1Text == "") {
                                             $('.b1').text("o");
-                                            turn = 0;
                                           
                                     }
                                                     }
@@ -176,38 +164,38 @@ var compMove = function () {
 
 
 
-var changeWinColor = function ( array ) {
+var changeWinColor = function ( array ) { // this changes the background color of the squares for the 3 in a row
     for ( var i = 0; i < array.length; i++ ) {
         array[i].css("background-color", "red")
     };
 }
 
-var winner = function() {
-    if (turn === 1) {
+var winner = function() { // this determines whether X or ) has won, and is then passed in to the master function
+    if (0 === turn) {
         $('.winnerX').css("visibility", "visible");
         $('.winnerO').css("visibility", "hidden");
         scoreX();
 
 
-    } else if (turn === 0) {
-        $('.winnerO').css("visibility", "visible");
+    } else if (1 === turn) {
         $('.winnerX').css("visibility", "hidden");
+        $('.winnerO').css("visibility", "visible");
         scoreO();
 
     }
 };
 
 
-var scoreX = function () {
+var scoreX = function () { // this adds the score of 1 to the board for X if they win
     $('.scoreX').text( parseInt( $('.scoreX').text() ) + 1 );
 }	
 
-var scoreO = function () {
+var scoreO = function () { // this adds the score of 1 to the board for 0 if they win
    $('.scoreO').text( parseInt( $('.scoreO').text() ) + 1 );
 }
 
 
- var clearInputs = $("#newGame").click( function() {
+ var clearInputs = $("#newGame").click( function() { // this is the New Game button and clears the board if pressed
     turn = 0;
  	$('.square').text("");
     $('.square').css("background-color", "rgba(60, 132, 198, 0.8");
@@ -215,10 +203,11 @@ var scoreO = function () {
     $('.playerTurn').css("visibility", "visible");
     $('.winnerX').css("visibility", "hidden");
     $('.winnerO').css("visibility", "hidden");
+    $('.tieGame').css("visibility", "hidden");
  })
 
  
-var gameOver = function() {
+var gameOver = function() { // this displays the text Game Over if someone wins, and makes the playerTurn hidden
         // $('.playerTurn').css("visibility", "hidden");
         $('.playerTurn').css("visibility", "hidden");
         $('.gameOver').css("visibility", "visible");
@@ -226,10 +215,21 @@ var gameOver = function() {
 
 
 
-var clearScore = $("#clearScore").click (function () {
+var clearScore = $("#clearScore").click (function () { // this clears the score board when pressed
         $('.scoreX').text("0");
         $('.scoreO').text("0");     
 })
+
+
+var tieGame = function() { // Checks for tie game
+            if ((($a1Text == "x") || ($a1Text == "o")) && (($b1Text == "x") || ($b1Text == "o")) && (($c1Text == "x") || ($c1Text == "o")) && (($a2Text == "x") || ($a2Text == "o")) && (($b2Text == "x") || ($b2Text == "o")) && (($c2Text == "x") || ($c2Text == "o")) && (($a3Text == "x") || ($a3Text == "o")) && (($b3Text == "x") || ($b3Text == "o")) && (($c3Text == "x") || ($c3Text == "o"))) 
+            {
+                
+        $('.playerTurn').css("visibility", "hidden");
+        $('.tieGame').css("visibility", "visible");
+           
+            }
+};
 
 
 
