@@ -31,7 +31,7 @@ I added a JQuery function that displayed which player won ie - "Player X Wins", 
 
 When a player won I also displayed the text "Game Over". Both these were just paragraph text, with individual classes assigned to them.
 
-I added a Scoreboard for each player (again just paragraphs tags with their own classes, that increased a count for each player depending on who won).
+I added a Scoreboard for each player (again just paragraphs tags with their own classes, that increased a count for each player depending on who won). I also added a button to reset the scoreboard.
 
 All of these events were done using the hidden / visible CSS & JQuery commands. It became a bit confusing after a while what was on or off (if I went back to the code), but again, given this was my fifth day of JQuery, I let myself off.
 
